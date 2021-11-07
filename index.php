@@ -43,30 +43,36 @@
                 
               </form>
               <?php
-                          include 'koneksi.php';  
-                          if (isset($_POST['submit'])) 
-                          {
-                            $user= $_POST["username"];
-                            $pass= md5($_POST['password']); 
-                            $ambil=$koneksi->query("SELECT * FROM spp WHERE username='$user' AND password='$pass'");
-                                    $pecah = $ambil->fetch_assoc();
-                                    $benar =$ambil->num_rows;
-                            if ($benar > 0) 
-                                    {   
-                              echo "<script>alert ('Password benar')</script>"; 
-                                         $_SESSION['iduser'] =$user;
-                                        $_SESSION['fullname'] = $user;
-                                        $_SESSION['admin'] = $pecah['admin'];
-                                       header("Location: admin.php");
-                                          die();
+              include "koneksi.php";
+              
+              if( isset( $_REQUEST['submit'] ) ){
+                $username = $_REQUEST['username'];
+                $password = $_REQUEST['password'];
+                
+                $sql = mysqli_query($koneksi,"SELECT iduser,username,admin,fullname FROM user WHERE username='$username' AND password=md5('$password')");
+                
+                if( mysqli_num_rows($sql) > 0 ){
+                  list($iduser,$username,$admin,$fullname) = mysqli_fetch_array($sql);
+                  
+            //session_start();
+                  $_SESSION['iduser'] = $iduser;
+                  $_SESSION['username'] = $username;
+                  $_SESSION['admin'] = $admin;
+                  $_SESSION['fullname'] = $fullname;
+                  
+                  header("Location: ./admin.php");
+                  die();
+                } else {
+            //$err = '<strong>ERROR!</strong> Username dan Password tidak ditemukan.';
+            //header('Location: ./?err='.urlencode($err));
 
-                            }
-                            else
-                            {
-                              echo "<script>alert ('Password salah')</script>"; 
-                            }
-                          }
-                          ?>
+                  $_SESSION['err'] = '<strong>ERROR!</strong> Username dan Password tidak ditemukan.';
+                  header('Location: ./');
+                  die();
+                }
+                
+              }
+              ?>
             </div>
           </div>
         </div>
