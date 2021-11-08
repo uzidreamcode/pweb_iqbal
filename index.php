@@ -26,10 +26,9 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left p-5">
               <div class="brand-logo">
-                <img src="assets/images/logo.svg">`
+               <h2 style="color: #b66dff" class="text-center"><b>SPP IQBAL</b></h2>
               </div>
-              <h4>Hello! let's get started</h4>
-              <h6 class="font-weight-light">Sign in to continue.</h6>
+              
               <form method="post" class="pt-3">
                 <div class="form-group">
                   <input type="text" name="username" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">

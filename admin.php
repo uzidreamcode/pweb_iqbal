@@ -26,7 +26,7 @@ session_start();
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="admin.php"><img src="assets/images/logo.svg" alt="logo" /></a>
+        <a class="navbar-brand brand-logo" href="admin.php"><h2 style="color: #b66dff">IQBAL</h2></a>
         <a class="navbar-brand brand-logo-mini" href="admin.php"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-stretch">
@@ -38,7 +38,7 @@ session_start();
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
               <div class="nav-profile-img">
-                <img src="assets/images/faces/face1.jpg" alt="image">
+                <img src="iqbal.jpeg" alt="image">
                 <span class="availability-status online"></span>
               </div>
               <div class="nav-profile-text">
@@ -80,7 +80,7 @@ session_start();
               <li class="nav-item nav-profile">
                 <a href="#" class="nav-link">
                   <div class="nav-profile-image">
-                    <img src="assets/images/faces/face1.jpg" alt="profile">
+                    <img src="iqbal.jpeg" alt="profile">
                     <span class="login-status online"></span>
                     <!--change to offline or busy as needed-->
                   </div>
@@ -161,6 +161,7 @@ session_start();
                 include 'home.php';
               }
               ?>
+              
             </div>
         </div>
           <!-- main-panel ends -->
